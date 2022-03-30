@@ -5,8 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <!-- <script>
+      (window.pickup = {
+        ready: function () {
+          return null;
+        },
+      }),
+        (window.puDataLayer = window.puDataLayer || []),
+        (function () {
+          window.puDataLayer.push(...arguments);
+        })("PUBLISHER_TOKEN", "PUBLISHER_ID", !0); // be sure to replace PUBLISHER_TOKEN and PUBLISHER_ID
+    </script> -->
+    <!-- <script src="https://api.playpickup.com/pickup-picker-v1.js"></script> -->
   </head>
   <body>
     <div id="root"></div>
+    <div class="pickup-js-prop-picker" data-propid="8357"></div>
+
+    <script>
+      pickup.ready(() => {
+        pickup.render();
+      });
+    </script>
   </body>
 </html>

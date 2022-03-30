@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import axios from "axios";
+import loadPicker from "./Picker";
 
 import logo from "./logo.png";
 import "./styles.css";
@@ -9,6 +10,12 @@ const Main: React.FC = () => {
     const callBackend = async (): Promise<void> => {
       const response = await axios.get("/api/hello");
       console.log(response.data.message);
+      loadPicker(() => {
+        const ren = "pickup.ready(() => {pickup.render();});";
+        const final = document.createElement("script");
+        final.innerHTML = ren;
+        document.body.appendChild(final);
+      });
     };
     callBackend();
   }, []);
